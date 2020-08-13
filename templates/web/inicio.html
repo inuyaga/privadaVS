@@ -1,0 +1,535 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    <!-- Slider -->
+    <section class="no-padding">
+        <div id="full-slider-wrapper">
+            <div id="layerslider" class="slider1" style="width:100%;height:500px;max-width: 1920;">	
+                
+                {% for item in portadas %}                    
+                <div class="ls-slide" data-ls="transition2d: 1;durationin:500">
+                    <img  class="ls-bg" src="{{item.blog_imagen.url}}" style="background-size: contain;" alt="Image">
+                    <img class="ls-l" src="{{item.blog_imagen.url}}" style="background-size: contain" alt="Image"
+                    style="top: 10px; left: 70%;"
+                    data-ls="offsetxin:100;delayin:1000;offsetyout:0;offsetxout:100;durationin:500"
+                    >
+                   <h3 class="ls-l" style="top:115px;left:0px" 
+                        data-ls="offsetxin:0;offsetyin:100;delayin:400;offsetxout:0;offsetyout:-100;durationin:500"
+                    >CLEAN DESIGN</h3>
+                    <p class="ls-l" style=" top:235px;left:0;" 
+                        data-ls="offsetxin:0;offsetyin:100;delayin:600;offsetxout:0;offsetyout:-100;durationin:500"
+                    >Praesent lacus ipsum, interdum feugiat nisi eu, auctor venenatis nibh.
+                        Nam fermentum egestas lacinia. Nam arcu felis, posuere sed ullamcorper
+                        faucibus, lobortis nec eros. Phasellus id lacus neque.</p>
+                    <a href="#" class="ls-l ot-btn btn-main-color btn-rounded text-up white-text" style=" top:315px;left:0;" 
+                        data-ls="offsetxin:0;offsetyin:100;delayin:800;offsetxout:0;offsetyout:-100;durationin:500"
+
+                    >CONTINUE READING <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                </div>
+                {% endfor %}
+
+               
+                    
+
+                
+            </div>
+        </div>
+    </section>
+       <!-- /Slider -->
+
+       <!-- icon box -->
+       <section id="iconbox" class="dskt-padding-55">
+           <div class="container">
+               <div class="row">
+                   <div class="header-iconbox">
+                       <h3 class="text-cap text-center">Conoce nuestras casas.</h3>
+                       <p class="text-center des-text">Phasellus id lacus neque. Proin vestibulum leo at turpis rhoncus, sed lacinia sem mollis. Etiam cursus bibendum dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam auctor eu nunc nec facilisis. Duis in felis eget eros tristique ornare. Maecenas volutpat, nisi id pretium imperdiet, odio neque pellentesque erat.</p>
+                   </div>
+                   <div class="iconbox-set-1-warp">
+                       <div class="col-md-3">
+                        <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        
+                                        <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Single Image Post</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">web</a><a href="#" class="soft-grey-text hover-text-theme">, development</a></p>
+                            </div>
+                        </div>
+                       </div>
+                       
+                       
+                       
+                   </div>
+               </div>
+           </div>
+       </section>
+       <!-- /icon box -->
+
+       <!-- Feature -->
+       <section id="feature" class="bg-light-grey">
+           <div class="container">
+               <div class="row">
+                   <div class="feature-warp">
+                       <div class="col-md-8">
+                           <h3>Why You Should Choose Us?</h3>
+                           <p class="feature-des-text">Integer est arcu, congue nec vulputate faucibus, aliquam eget tellus. Aliquam laoreet aliquam mi, vitae tempus orci mattis vitae. Cras ultricies mauris est, ultricies sagittis diam euismod et. Curabitur at dolor vitae felis semper ullamcorper eu mattis felis. Phasellus felis diam, egestas non hendrerit a, lacinia a neque. </p>
+                           <div class="discover">
+                               <img src="http://placehold.it/316x330/ccc.jpg" class="img-responsive" alt="Image">
+                               <ul class="feature">
+                                   <li class="wow fadeIn" data-wow-delay=".25s"><i class="fa fa-check-circle color-theme" aria-hidden="true"></i> EASY CUSTOMIZATION</li>
+                                   <li class="wow fadeIn" data-wow-delay=".35s"><i class="fa fa-check-circle color-theme" aria-hidden="true"></i> RESPONSIVE TEMPLATE</li>
+                                   <li class="wow fadeIn" data-wow-delay=".45s"><i class="fa fa-check-circle color-theme" aria-hidden="true"></i> MULTIPLE PORTFOLIO COLUMNS</li>
+                                   <li class="wow fadeIn" data-wow-delay=".55s"><i class="fa fa-check-circle color-theme" aria-hidden="true"></i> AMIZING SLIDER</li>
+                                   <li class="wow fadeIn" data-wow-delay=".65s"><i class="fa fa-check-circle color-theme" aria-hidden="true"></i> 10 AMAZING SKINS</li>
+                                   <li class="wow fadeIn" data-wow-delay=".75s"><i class="fa fa-check-circle color-theme" aria-hidden="true"></i> AND MANY MORE...</li>
+                               </ul>
+                               <a href="#" class="ot-btn btn-sub-color bg-hover-theme animation-icon btn-rounded bg-sub-theme-callback white-text wow fadeIn" data-wow-delay="1s">DISCOVER MORE <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div class="" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-custom border-color-theme">
+                                <div class="panel-heading " role="tab" id="headingOne">
+                                      <h3 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          Cras Suscipit Pulvinar Dui Vitae
+                                        </a>
+                                      </h3>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                  <div class="panel-body">
+                                    Pellentesque eleifend euismod sapien non egestas. Donec
+                                    ante sapien, semper tristique nulla vitae, porttitor
+                                    consequat nisi.
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-custom ">
+                                <div class="panel-heading " role="tab" id="headingTwo">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                      Morbi Ante Mi Commodo Nec Dignissim
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body">
+                                  Pellentesque eleifend euismod sapien non egestas. Donec
+                                    ante sapien, semper tristique nulla vitae, porttitor
+                                    consequat nisi.
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-custom ">
+                                <div class="panel-heading " role="tab" id="headingThree">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      Nullam Tristique Scelerisque Felis Vel Tempor
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                  <div class="panel-body ">
+                                   Pellentesque eleifend euismod sapien non egestas. Donec
+                                    ante sapien, semper tristique nulla vitae, porttitor
+                                    consequat nisi.
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-custom ">
+                                <div class="panel-heading " role="tab" id="headingFour">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                      Vivamus Tempor Est In Tortor Faucibus, At Lacinia Libero
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                  <div class="panel-body ">
+                                   Pellentesque eleifend euismod sapien non egestas. Donec
+                                    ante sapien, semper tristique nulla vitae, porttitor
+                                    consequat nisi.
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+       <!-- /Feature -->
+
+
+       <!-- Lastest Project -->
+       <section id="project">
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-12">
+                       <h3 class="title-inline">Our Latest Projects</h3>
+                       <div class="customNavigation customNavigation-1">
+                        <a class="btn-1 prev-project hover-border-theme hover-text-theme"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-1 next-project hover-border-theme hover-text-theme"><i class="fa fa-chevron-right"></i></a>
+                    </div><!-- End owl button -->
+                   </div>
+                   <div class="lastest-project-warp">
+                    <div id="owl-project" class="owl-carousel owl-theme owl-project ">
+                         <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        
+                                        <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Single Image Post</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">web</a><a href="#" class="soft-grey-text hover-text-theme">, development</a></p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <div class="gallery-feature-img">
+                                          <a href="http://placehold.it/740x460/ccc.jpg" title="EASY CUSTOMIZATION">
+                                                  <i class="fa fa-expand hover-border-theme "></i>
+                                          </a>
+                                          <a href="http://placehold.it/740x460/ccc.jpg" title="MULTIPLE PORTFOLIO COLUMNS"></a>
+                                          <a href="http://placehold.it/740x460/ccc.jpg" title="10 AMAZING SKINS"></a>
+                                        </div>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Gallery Images Post</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">html</a><a href="#" class="soft-grey-text hover-text-theme">, development</a></p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <a class="popup-youtube" href="https://www.youtube.com/watch?v=Pr6C5QP3S7c"><i class="fa fa-expand hover-border-theme "></i></a><br/>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Youtube Video Post</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">javascript</a><a href="#" class="soft-grey-text hover-text-theme">, css</a></p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <a class='popup-vimeo' href="https://vimeo.com/177533449" title="R&ouml;yksopp: Remind Me"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="#"><h4 class="hover-text-theme">Vimeo Video Post</h4></a>
+                                <p><a href="#" class="soft-grey-text hover-text-theme">css</a><a href="#" class="soft-grey-text hover-text-theme">, markup</a></p>
+                            </div>
+                        </div>
+                       
+                        <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <a class="popup-gmaps" href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Google Map Post</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">web</a><a href="#" class="soft-grey-text hover-text-theme">, wordpress</a></p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Pellentesque Porta A Odio Ut Ornare</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">web</a><a href="#" class="soft-grey-text hover-text-theme">, wordpress</a></p>
+                            </div>
+                        </div>
+
+                         <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Integer A Viverra Odio</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">html</a><a href="#" class="soft-grey-text hover-text-theme">, wordpress</a></p>
+                            </div>
+                        </div>
+
+                         <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Integer A Viverra Odio</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">html</a><a href="#" class="soft-grey-text hover-text-theme">, javascript</a></p>
+                            </div>
+                        </div>
+
+                         <div class="item">
+                            <div class="project-item">
+                                <div class="project-item-img-container">
+                                    <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                    <!-- Overlay -->
+                                    <div class="overlay-1 hover-border-theme">
+                                        <a href="portfolio-single.html">
+                                            <i class="fa fa-link hover-border-theme "></i>
+                                        </a>
+                                        <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                        </div>
+                                        <!-- /overlay -->
+                                </div>
+                                <a href="portfolio-single.html" ><h4 class="hover-text-theme">Integer Pretium Cursus Libero</h4></a>
+
+                                <p><a href="#" class="soft-grey-text hover-text-theme">html</a><a href="#" class="soft-grey-text hover-text-theme">, web</a></p>
+                            </div>
+                        </div>
+
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+       <!-- /Lastest Project -->
+
+
+       <!-- Testimonial -->
+       <section id="testimonial" class="relative">
+           <div class="bg-overlay-img-1"></div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-12">
+                       <h3 class="title-center white-text">Testimonials</h3>
+                   
+
+                       <div class="testimonial-1-warp">
+                    <div id="owl-testimonial-1" class="owl-carousel owl-theme owl-testimonial-1 ">
+                        <div class="item">
+                            <div class="testimonial-1-item border-color-theme">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                <blockquote>
+                                  <p>Duis pulvinar risus nisl, id feugiat mi porttitor fringilla. Fusce vitae suscipit sapien, nec rutrum justo. Cum sociis natoque penatibus et magnis dis parturientmontes, nascetur ridiculus mus. In at fermentum orci, a pretium nisi. Suspendisse placerat egestas sem et aliquam. Morbi eu placerat arcu.</p>
+                                  <footer class="color-theme">James P. Stanley, developer</footer>
+                                </blockquote>
+                            </div>
+                            <div class="arrow-down border-color-theme"></div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-1-item border-color-theme">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                <blockquote>
+                                  <p>Duis pulvinar risus nisl, id feugiat mi porttitor fringilla. Fusce vitae suscipit sapien, nec rutrum justo. Cum sociis natoque penatibus et magnis dis parturientmontes, nascetur ridiculus mus. In at fermentum orci, a pretium nisi. Suspendisse placerat egestas sem et aliquam. Morbi eu placerat arcu.</p>
+                                  <footer class="color-theme">Adam D. Slander, Develope</footer>
+                                </blockquote>
+                            </div>
+                            <div class="arrow-down border-color-theme"></div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-1-item border-color-theme">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                <blockquote>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                  <footer class="color-theme">James P. Cameron, Design</footer>
+                                </blockquote>
+                            </div>
+                            <div class="arrow-down border-color-theme"></div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-1-item border-color-theme">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                <blockquote>
+                                  <p>
+                                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                  <footer class="color-theme">Mark Z. Ken, Front End</footer>
+                                </blockquote>
+                            </div>
+                            <div class="arrow-down border-color-theme"></div>
+                        </div>
+                       </div>
+                       
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+       <!-- /Testimonial -->
+
+       <!-- Partner -->
+       <section>
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-12">
+                       <div class="title-warp">
+                       <h3 class="title-inline">Respective Partners</h3>
+                       <div class="customNavigation customNavigation-1">
+                        <a class="btn-1 prev-partner hover-border-theme hover-text-theme"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-1 next-partner hover-border-theme hover-text-theme"><i class="fa fa-chevron-right"></i></a>
+                    </div><!-- End owl button -->
+                       </div>
+                       <div class="partner-warp">
+                    <div id="owl-partner" class="owl-carousel owl-theme owl-partner ">
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="partner-item">
+                                <a href="#">
+                                    <img src="http://placehold.it/250x200/ccc.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+
+                       </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+       <!-- /Partner -->
+
+       <!-- Call to action -->
+       <section id="call" class="bg-light-grey">
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-12">
+                       <div class="call1">
+                           <h3>Quisque hendrerit sed lorem nec ornare. Proin sed turpis at odio molestie cursus.</h3>
+                           <p>Fusce nec velit elementum arcu tincidunt venenatis blandit id lorem. Cras commodo risus massa, at volutpat neque hendrerit a. Ut sed auctor nisl. Quisque pulvinar urna nec diam congue, quis accumsan arcu dapibus.</p>
+                           <a href="#" class="ot-btn btn-main-color btn-rounded text-up white-text">PURCHASE NOW <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+       <!-- /Call to action -->
+{% endblock contenido %}
+    
