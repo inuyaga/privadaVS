@@ -1,0 +1,107 @@
+
+/* ==========================================================================
+   #00abc9 & #2e363a;
+   ========================================================================== */
+.bg-theme,
+.btn-main-color,
+.navi-level-2 > li.active > a,
+.navi-level-3 li a:hover,
+.owl-team .owl-page.active,
+.project-style-2 a.current,
+.owl-blog-landing .owl-page.active,
+.pricing-table.featured header,
+.pricing-tables-group .pricing-tables-group-item.featured p.title,
+.product-overlay a,
+.social-single-team li a:hover,
+.portfolio-gallery-feature-img .owl-gallery-portfolio-post .owl-controls .owl-page.active,
+.twitter-owl-warp .timePosted a,.iconbox-set-3:hover .icon-2
+{
+  background-color: #00abc9;
+}
+.navi-level-2 li a {
+  background-color: #2e363a;
+}
+.color-theme,
+.timePosted a,
+.mPS2id-highlight span,
+.reward-item p.date,
+.pricing-table header .price p.value,
+.pricing-table .content ul li i.fa,
+.btn-border-main-color,
+.faq-heading,
+.services-heading,
+.call3 .sub-heading-call3,
+.navi-level-1 li a:focus,.icon-twitter-3,.twitter-widget-2 a:hover,.twitter-owl-warp a:hover {
+  color: #00abc9 !important;
+}
+.border-color-theme,
+.panel-custom .panel-heading a,
+.panel-collapse.collapse.in,
+.tab1 > li.active > a,
+.tab1 > li.active > a:hover,
+.tab1 > li.active > a:focus,
+.btn-border-main-color,.icon-twitter-3,.thumb-owl-testimonial-2 .owl-item.synced .thumb-owl-2 .avatar-owl-2,.team-item:hover .overlay-1 {
+  border-color: #00abc9;
+}
+.bg-overlay-color {
+  background-color: rgba(0, 171, 201, 0.8);
+}
+.pricing-tables-group .pricing-tables-group-item.featured p.price {
+  background-color: #005463;
+}
+/* 
+   Hover
+   ========================================================================== */
+.hover-text-theme:hover,
+.btn-border-sub-color:hover,
+.widget-category ul.category li:hover a,
+.portfolio-feature-content .col-description ul.social-share a:hover {
+  color: #00abc9 !important;
+}
+.bg-hover-theme:hover,
+.bg-hover-theme:focus,
+.fixbtt:hover,
+.project-style-2 a:hover {
+  background-color: #00abc9 !important;
+}
+.hover-border-theme:hover,
+.project-item:hover .overlay-1,
+.btn-border-sub-color:hover,
+.form-control:focus {
+  border-color: #00abc9 !important;
+}
+.tab1 > li > a:hover {
+  border-top-color: #00abc9 !important;
+}
+/* sub color */
+.iconbox-set-1:hover .icon-1 {
+  background-color: #2e363a;
+}
+/*Fix*/
+.navi-right li a:hover,
+.navi-right li a:focus,
+.topbar-info-1 li a,
+.topbar-info-1 li span,
+.pricing-table.featured header .price p.value,
+.navi-warp-h2 .navi-level-1 > li > a:focus,.navi-level-2 li a:focus
+,.navi-warp-h2-inner .navi-level-1>li>a:hover
+{
+  color: #fff!important;
+}
+.twitter-owl-warp .timePosted a {
+  color: #fff!important;
+}
+.btn-border-main-color:hover {
+  color: #222!important;
+}
+.overlay-1 {
+  background: rgba(46, 54, 58, 0.85);
+}
+::selection {
+  background: #00abc9;
+  color:#fff; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #00abc9;
+  color:#fff; /* Gecko Browsers */
+}

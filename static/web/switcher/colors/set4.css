@@ -1,0 +1,106 @@
+
+/* ==========================================================================
+   #e3823d & #787777;
+   ========================================================================== */
+.bg-theme,
+.btn-main-color,
+.navi-level-2 > li.active > a,
+.navi-level-3 li a:hover,
+.owl-team .owl-page.active,
+.project-style-2 a.current,
+.owl-blog-landing .owl-page.active,
+.pricing-table.featured header,
+.pricing-tables-group .pricing-tables-group-item.featured p.title,
+.product-overlay a,
+.social-single-team li a:hover,
+.portfolio-gallery-feature-img .owl-gallery-portfolio-post .owl-controls .owl-page.active,
+.twitter-owl-warp .timePosted a,.iconbox-set-3:hover .icon-2
+{
+  background-color: #e3823d;
+}
+.navi-level-2 li a {
+  background-color: #787777;
+}
+.color-theme,
+.timePosted a,
+.mPS2id-highlight span,
+.reward-item p.date,
+.pricing-table header .price p.value,
+.pricing-table .content ul li i.fa,
+.btn-border-main-color,
+.faq-heading,
+.services-heading,
+.call3 .sub-heading-call3,
+.navi-level-1 li a:focus,.icon-twitter-3,.twitter-widget-2 a:hover,.twitter-owl-warp a:hover {
+  color: #e3823d !important;
+}
+.border-color-theme,
+.panel-custom .panel-heading a,
+.panel-collapse.collapse.in,
+.tab1 > li.active > a,
+.tab1 > li.active > a:hover,
+.tab1 > li.active > a:focus,
+.btn-border-main-color,.icon-twitter-3 {
+  border-color: #e3823d;
+}
+.bg-overlay-color {
+  background-color: rgba(227, 130, 61, 0.8);
+}
+.pricing-tables-group .pricing-tables-group-item.featured p.price {
+  background-color: #a35117;
+}
+/* 
+   Hover
+   ========================================================================== */
+.hover-text-theme:hover,
+.btn-border-sub-color:hover,
+.widget-category ul.category li:hover a,
+.portfolio-feature-content .col-description ul.social-share a:hover {
+  color: #e3823d !important;
+}
+.bg-hover-theme:hover,
+.bg-hover-theme:focus,
+.fixbtt:hover,
+.project-style-2 a:hover {
+  background-color: #e3823d !important;
+}
+.hover-border-theme:hover,
+.project-item:hover .overlay-1,
+.btn-border-sub-color:hover,
+.form-control:focus,.thumb-owl-testimonial-2 .owl-item.synced .thumb-owl-2 .avatar-owl-2,.team-item:hover .overlay-1 {
+  border-color: #e3823d !important;
+}
+.tab1 > li > a:hover {
+  border-top-color: #e3823d !important;
+}
+/* sub color */
+.iconbox-set-1:hover .icon-1 {
+  background-color: #787777;
+}
+/*Fix*/
+.navi-right li a:hover,
+.navi-right li a:focus,
+.topbar-info-1 li a,
+.topbar-info-1 li span,
+.pricing-table.featured header .price p.value,
+.navi-warp-h2 .navi-level-1 > li > a:focus,.navi-level-2 li a:focus
+,.navi-warp-h2-inner .navi-level-1>li>a:hover
+{
+  color: #fff!important;
+}
+.twitter-owl-warp .timePosted a {
+  color: #fff!important;
+}
+.btn-border-main-color:hover {
+  color: #222!important;
+}
+.overlay-1 {
+  background: rgba(120, 119, 119, 0.85);
+}
+
+::selection {
+  background: #e3823d;
+}
+::-moz-selection {
+  background: #e3823d;
+}
