@@ -1,0 +1,361 @@
+
+{% extends 'web/base.html' %}
+{% load humanize %}
+{% block contenido %}
+   	<!-- Subheader -->
+       <section id="subheader" class="no-padding sub-header-border">
+        <div class="container">
+            <div class="row">
+                <div class="sub-header-warp">
+                    <h1 class="title-subheader">{{object}}</h1>
+                    <ol class="breadcrumb">
+                        <li>Esta: </li>
+                        <li>
+                            <a href="#">Inicio     </a>
+                        </li>
+                        
+                        <li class="active">Chalets</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- /Subheader -->
+
+      <!-- Main Content -->
+      
+      <section id="main-content">
+          <div class="container">
+              <div class="row">
+                  <div class="main-page">
+                      <div id="single-portfolio" class="single-portfolio-warp">
+                          <div class="item-blog portfolio-gallery-feature-img">
+                              <div class="portfolio-feature-warp">
+                                  
+                                   <a class="prev-portfolio-image hover-border-theme hover-text-theme"></a>
+                                   <a class="next-portfolio-image hover-border-theme hover-text-theme"></a>
+                           
+                               <div class="gallery-portfolio-post-warp">
+                                   <div id="owl-gallery-portfolio-post" class="owl-carousel owl-theme owl-gallery-portfolio-post ">                                       
+                                       {% for item in object.chalet_galeria.all %}                                           
+                                       <div class="item">
+                                           <img src="{{item.g_imagen.url}}" class="img-responsive" alt="Image">
+                                       </div>
+                                       {% endfor %}                                                                                  
+                                   </div>
+                               </div>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            {{object.chalet_contenido|safe}}
+                            <br>
+                            <br>
+                        </div>
+
+                          <div class="portfolio-feature-content">
+                           <div class="porfolio-info-col col-description">
+                               <h3>Descripción</h3>
+                               <p>{{object.chalet_descripcion}}</p>
+
+                               <ul class="social-share">
+                                   <li> Compartir :</li>
+                                   
+                                   {% for item in redes_sociales %}
+                                   <li><a href="{{item.rs_url}}" class=""><i class="{{item.rs_tipo}}" aria-hidden="true"></i></a></li>                                       
+                                   {% endfor %}
+                                       
+                                  
+                               </ul>
+
+                               <!-- <a href="#" class="ot-btn btn-main-color btn-rounded">LAUCH THE PROJECT <i class="fa fa-share-square-o" aria-hidden="true"></i></a> -->
+                           </div>
+
+                           <div class="porfolio-info-col col-detail">
+                               <h3>Detalles</h3>
+                               <p><span>Tipo:</span>{{object.get_chalet_tipo_display}}</p>
+                               <p><span>Precio:</span>{{object.chalet_costo|intcomma}}</p>
+                               <p><span>Recamaras:</span>{{object.chalet_no_recamara}}</p>
+                               <p><span>Cocina:</span>{{object.chalet_no_cocina}}</p>
+                               
+
+                           </div>
+
+                           <div class="porfolio-info-col col-skill">
+                               <h3>Detalles</h3>
+                               <!-- <p><i class="fa fa-check-circle color-theme" aria-hidden="true"></i>HTML</p> -->
+                               <p><span>Baño:</span>{{object.chalet_no_bano}}</p>
+                               <p><span>Estacionamiento:</span>{{object.chalet_no_estacionamiento}}</p>
+                               <p><span>Amueblado:</span>{{object.chalet_amueblado}}</p>
+                           </div>
+
+                       </div>
+                      </div>
+
+
+                      
+                   <!-- Relate Post -->
+                   <div class="relate-project">
+                              <h3 class="title-inline">Related Project</h3>
+                              
+                              {% for item in chalet_related %}
+                                  <li>{{item}}</li>
+                              {% endfor %}
+                                  
+                              <div class="customNavigation customNavigation-1">
+                               <a class="btn-1 prev-relate-portfolio hover-border-theme hover-text-theme"><i class="fa fa-chevron-left"></i></a>
+                               <a class="btn-1 next-relate-portfolio hover-border-theme hover-text-theme"><i class="fa fa-chevron-right"></i></a>
+                           </div><!-- End owl button -->
+                              <div class="relate-portfolio-warp">
+                               <div id="owl-relate-portfolio" class="owl-carousel owl-theme owl-relate-portfolio ">
+                                    <div class="item">
+                                       <div class="project-item">
+                                           <div class="project-item-img-container">
+                                               <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                               <!-- Overlay -->
+                                               <div class="overlay-1 ">
+                                                   <a href="#">
+                                                       <i class="fa fa-link hover-border-theme "></i>
+                                                   </a>
+                                                   
+                                                   <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                                   </div>
+                                                   <!-- /overlay -->
+                                           </div>
+                                           <a href="#" ><h4 class="hover-text-theme">Single Image Post</h4></a>
+
+                                           <p><a href="#" class="soft-grey-text hover-text-theme">web</a><a href="#" class="soft-grey-text hover-text-theme">, development</a></p>
+                                       </div>
+                                   </div>
+
+                                  </div>
+                              </div>
+                   </div>
+                   <!-- /Relate Post -->
+
+                  </div>
+                  <!-- /Main Page -->
+                  <div class="sidebar-page">
+                      <div id="sidebar" class="main-sidebar">
+                          <div class="widget widget-search">
+                              <form class="form-inline">
+                                 <div class="form-group">
+                                   <input class="form-control" id="widgetsearch" placeholder="Type & Search..." type="email">
+                                 </div>
+                                 <button type="button" class="reset-btn hover-text-theme"><i class="fa fa-search"></i></button>
+                           </form>
+                          </div>
+                          <div class="widget widget-category">
+                              <h3>Category</h3>
+                              <uL class="category">
+                                  <li><a href="#" class="hover-text-theme">Web</a><span class="count">2</span></li>
+                                  <li><a href="#" class="hover-text-theme">Development</a><span class="count">3</span></li>
+                                  <li><a href="#" class="hover-text-theme">HTML</a><span class="count">5</span></li>
+                                  <li><a href="#">CSS</a><span class="count">12</span></li>
+                                  <li><a href="#" class="hover-text-theme">JavaScript</a><span class="count">11</span></li>
+                                  <li><a href="#" class="hover-text-theme">WordPress</a><span class="count">7</span></li>
+                              </uL>
+                          </div>
+                          <div class="widget widget-tabs">
+                              <ul class="nav nav-tabs tab1 tab2">
+                             <li class="active"><a href="#date" data-toggle="tab"><h4><i class="fa fa-calendar" aria-hidden="true"></i></h4></a></li>
+                             <li><a href="#feature" data-toggle="tab"><h4><i class="fa fa-star" aria-hidden="true"></i></h4></a></li>
+                             <li><a href="#comment" data-toggle="tab"><h4><i class="fa fa-comments-o" aria-hidden="true"></i></h4></a></li>
+                           </ul>
+                           <div class="tab-content tab-content-1 tab-content-2">
+                                   <div class="tab-pane active" id="date">
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Sed Nulla Metus...</h4></a>
+                                               <p>Cras Suscipit Pulvinar Dui Vitae...</p>
+                                           </div>
+                                       </div>
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Interdum Malesuada...</h4></a>
+                                               <p>Phasellus vel pulvinar nibh, laoreet...</p>
+                                           </div>
+                                       </div>
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Sed Fringilla Diam...</h4></a>
+                                               <p>Mauris blandit pulvinar odio non...</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="tab-pane" id="feature">
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Morbi Ante..</h4></a>
+                                               <p class="rate">
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                               </p>
+                                           </div>
+                                       </div>
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Nullam TristiqueFelis...</h4></a>
+                                               <p class="rate">
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star-o" aria-hidden="true"></i>
+                                               </p>
+                                           </div>
+                                       </div>
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Vivamus Tempor...</h4></a>
+                                               <p class="rate">
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star" aria-hidden="true"></i>
+                                                   <i class="fa fa-star-o" aria-hidden="true"></i>
+                                               </p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="tab-pane" id="comment">
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Vitae Ullamcorper ...</h4></a>
+                                               <p>I think this's very...
+                                               <p>by <i>Adam D. Staling</i></p>
+                                           </div>
+                                       </div>
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">Vivamus Ed...</h4></a>
+                                               <p>Lorem Ipsum...
+                                               <p>by <i>John M. Doe</i></p>
+                                           </div>
+                                       </div>
+                                       <div class="item-blog-sidebar">
+                                              <div class="blog-feature-warp">
+                                                  <img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive" alt="Image">
+                                              </div>
+                                              <div class="blog-feature-content">
+                                               <a href="blog-single.html"><h4 class="hover-text-theme">In Placerat..</h4></a>
+                                               <p>Dora Lano Ed Ipsum...</p>
+                                               <p>by <i>Joan O. Jackson</i></p>
+                                           </div>
+                                       </div>
+                                   </div>
+                           </div><!-- tab content -->
+                          </div>
+                          <div class="widget widget-accordion">
+                              <h3>Accordion</h3>
+                              <div class="" id="accordion" role="tablist" aria-multiselectable="true">
+                               <div class="panel panel-custom border-color-theme">
+                                   <div class="panel-heading " role="tab" id="headingOne">
+                                         <h4 class="panel-title">
+                                           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                             Cras Suscipit Pulvinar Dui Vitae
+                                           </a>
+                                         </h4>
+                                   </div>
+                                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                     <div class="panel-body">
+                                       Pellentesque eleifend euismod sapien non egestas. Donec
+                                       ante sapien, semper tristique nulla vitae, porttitor
+                                       consequat nisi.
+                                     </div>
+                                   </div>
+                               </div>
+                               <div class="panel panel-custom ">
+                                   <div class="panel-heading " role="tab" id="headingTwo">
+                                     <h4 class="panel-title">
+                                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                         Morbi Ante Mi Commodo Nec Dignissim
+                                       </a>
+                                     </h4>
+                                   </div>
+                                   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                     <div class="panel-body">
+                                     Pellentesque eleifend euismod sapien non egestas. Donec
+                                       ante sapien, semper tristique nulla vitae, porttitor
+                                       consequat nisi.
+                                     </div>
+                                   </div>
+                               </div>
+                               <div class="panel panel-custom ">
+                                   <div class="panel-heading " role="tab" id="headingThree">
+                                     <h4 class="panel-title">
+                                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                         Nullam Tristique Scelerisque Felis Vel Tempor
+                                       </a>
+                                     </h4>
+                                   </div>
+                                   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                     <div class="panel-body ">
+                                      Pellentesque eleifend euismod sapien non egestas. Donec
+                                       ante sapien, semper tristique nulla vitae, porttitor
+                                       consequat nisi.
+                                     </div>
+                                   </div>
+                               </div>
+                               <div class="panel panel-custom ">
+                                   <div class="panel-heading " role="tab" id="headingFour">
+                                     <h4 class="panel-title">
+                                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                         Vivamus Tempor Est In Tortor Faucibus, At Lacinia Libero
+                                       </a>
+                                     </h4>
+                                   </div>
+                                   <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                     <div class="panel-body ">
+                                      Pellentesque eleifend euismod sapien non egestas. Donec
+                                       ante sapien, semper tristique nulla vitae, porttitor
+                                       consequat nisi.
+                                     </div>
+                                   </div>
+                               </div>
+                           </div>
+                          </div>
+                          <div class="widget widget-text">
+                              <h3>Text Widget</h3>
+                              <p>Donec justo ligula, eleifend pharetra tincidunt
+                           sed, scelerisque sit amet elit. Aenean libero
+                           purus, eleifend at mauris id, fermentum
+                           condimentum lectus. Quisque fringilla lectus at
+                           ligula lacinia, eu molestie augue commodo.</p>
+                           <a href="#" class="ot-btn btn-main-color btn-rounded text-up white-text">Know More <i class="fa fa-plus" aria-hidden="true"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- /Main Content --> 
+{% endblock contenido %}
+    

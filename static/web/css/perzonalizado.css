@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Gotham;
+    src: url("../fonts/Gotham-Bold.otf") format("opentype");
+}
+
+.titulo-principal {
+    font-family: Gotham;
+    font-weight: bold;
+    font-size: 50px;
+    color: #4357E3;
+    text-transform: capitalize;
+}
+
+.color-template {
+    font-family: Gotham !important;
+    color: #4357E3 !important;
+}
+
+.t-stroke-shadow {
+    font-family: Gotham !important;
+    color: white !important;
+    text-shadow: -4px -1px #4357E3, palevioletred 1px 0 10px;
+    /* text-shadow: -3px 3px #4357E3, -3px -3px #4357E3, 3px -3px #4357E3, 3px 3px #4357E3, 6px 6px blue; */
+}
+
+.box-title {
+    font-family: Gotham !important;
+    background-color: #DEB152;
+    color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.subtitle-index {
+    font-family: Gotham !important;
+    font-weight: bold;
+    margin-left: 50px !important;
+}

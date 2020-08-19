@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app.web',
     'tinymce',
     'django_cleanup.apps.CleanupConfig',
+    'django.contrib.humanize',
 ]
 
 
@@ -73,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'app.web.context_processors.load_red_socials'
             ],
         },
     },
