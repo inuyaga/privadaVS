@@ -74,7 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'app.web.context_processors.load_red_socials'
+                'app.web.context_processors.load_red_socials',
+                'app.web.context_processors.load_last_chalet'
             ],
         },
     },

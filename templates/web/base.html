@@ -2,12 +2,16 @@
 <!DOCTYPE html>
 <html lang="es-mx">
 
-<head>
-	<meta charset="utf-8">
+<head>	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>{% block titulo %}Privada Villa del Sur{% endblock titulo %}</title>
+	<meta name="description" content="CASAS Y DEPARTAMENTOS EN RENTA PASEO DE LA SIERRA 611 B COLONIA GUAYABAL VHSA TABASCO MEXICO">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="CMS">
 
-	<title>Privada Villa del Sur</title>
+	
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{% static 'web/css/bootstrap.css' %}">
@@ -29,7 +33,7 @@
 	<link rel="stylesheet" href="{% static 'web/css/magnific-popup.css' %}">
 
 	<!-- Main Style -->
-	
+
 	<link rel="stylesheet" href="{% static 'web/style.css' %}">
 	<!-- color scheme -->
 	<link rel="stylesheet" href="{% static 'web/switcher/demo.css' %}" type="text/css">
@@ -54,6 +58,26 @@
 				<li>
 					<a href="{% url 'web:index' %}"><span>Inicio</span></a>
 				</li>
+				<li>
+					<a href="{% url 'web:chalet-list' %}"><span>Chalets</span></a>
+				</li>
+				<li>
+					<a href="{% url 'web:index' %}"><span>Vision</span></a>
+				</li>
+				<li>
+					<a href="{% url 'web:index' %}"><span>Nosotros</span></a>
+				</li>
+				
+				{% if user.is_authenticated %}	
+					<li>
+						<a href="{% url 'admin:index' %}"><span>Panel</span></a>
+					</li>
+					{% else %}
+					<li>
+						<a href="{% url 'admin:index' %}"><span>Login</span></a>
+					</li>
+				{% endif %}
+					
 				<!-- <li>
 					<a href="#">Features</a>
 					<ul>
@@ -79,7 +103,7 @@
 						<li><a href="element.html">Element</a></li>
 					</ul>
 				</li> -->
-			
+
 				<!-- <li>
 					<a href="#"><span>Project</span></a>
 					<ul>
@@ -89,10 +113,18 @@
 						<li><a href="portfolio-single.html">Single Portfolio</a></li>
 					</ul>
 				</li> -->
-				
+
 			</ul>
 		</nav>
 		<!-- /Mobile Menu -->
+
+
+
+
+
+
+
+
 		<!-- topbar -->
 		<div class="topbar-1 bg-theme">
 			<div class="topbar-1-inner ">
@@ -105,13 +137,13 @@
 			 			</ul> -->
 
 				<ul class="social social-1">
-					
-					{% for item in redes_sociales %}						
-					<li><a href="{{item.rs_url}}"
-							class="color-theme hover-text-dark"><i class="{{item.rs_tipo}}" aria-hidden="true"></i></a>
+
+					{% for item in redes_sociales %}
+					<li><a href="{{item.rs_url}}" class="color-theme hover-text-dark"><i class="{{item.rs_tipo}}"
+								aria-hidden="true"></i></a>
 					</li>
 					{% endfor %}
-						
+
 					<!-- <li><a href="#" class="color-theme hover-text-dark"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 			 				<li><a href="#" class="color-theme hover-text-dark"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 			 				<li><a href="#" class="color-theme hover-text-dark"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
@@ -119,7 +151,7 @@
 				</ul>
 
 				<ul class="topbar-info topbar-info-1">
-					<li><span>Email :</span>&nbsp;&nbsp;<a href="mailto:support@dotted.com">support@dotted.com</a></li>
+					<!-- <li><span>Email :</span>&nbsp;&nbsp;<a href="mailto:support@dotted.com">support@dotted.com</a></li> -->
 					<li><span>Telefono :</span>&nbsp;&nbsp;<a href="tel:9933112875">993 311 2875</a></li>
 				</ul>
 			</div>
@@ -130,30 +162,27 @@
 		<header id="stick" class="header-v1">
 			<div class="header-v1-inner">
 				<div class="logo-1">
-					<a href="index.html"><img src="{% static 'text.png' %}" style="width: 90px; height: 24px;"
+					<a href="{% url 'web:index' %}"><img src="{% static 'text.png' %}" style="width: 90px; height: 24px;"
 							class="img-responsive" alt="Image"></a>
 					<p class="slogan-1">Renta departamentos y casas</p>
 				</div>
 				<ul class="navi-right">
-					<li><a href="#" class="btn-search-navi color-theme border-color-theme bg-hover-theme"><i
-								class="fa fa-search " aria-hidden="true"></i></a>
-						<div class="search-popup">
-							<form class="form-search-navi">
-								<div class="input-group">
-									<input class="form-control" placeholder="Search Here" type="text">
-								</div>
-								<!-- /input-group -->
-							</form>
-						</div>
-					</li>
+					
 
 					<!-- <li><a href="#" class="color-theme border-color-theme bg-hover-theme"><i class="fa fa-shopping-cart"
 								aria-hidden="true"></i></a></li> -->
 				</ul>
 				<nav id="main-navi" class="nav-r">
 					<ul class="navi-level-1">
-						<li class="has-sub"><a href="{% url 'web:index' %}"
-								class="dark-text hover-text-theme"><span>Inicio</span></a>
+						<li class="has-sub"><a href="{% url 'web:index' %}" class="dark-text hover-text-theme"><span>Inicio</span></a>
+						<li class="has-sub"><a href="{% url 'web:chalet-list' %}" class="dark-text hover-text-theme"><span>Chalets</span></a>
+						<li class="has-sub"><a href="#" class="dark-text hover-text-theme"><span>Vision</span></a>
+						<li class="has-sub"><a href="#" class="dark-text hover-text-theme"><span>Nosotros</span></a>						
+						{% if user.is_authenticated %}							
+							<li class="has-sub"><a href="{% url 'admin:index' %}" class="dark-text hover-text-theme"><span>Panel</span></a>
+						{% else %}
+							<li class="has-sub"><a href="{% url 'admin:index' %}" class="dark-text hover-text-theme"><span>Login</span></a>
+						{% endif %}							
 							<!-- <ul class="navi-level-2 ">
 								<li class="bg-theme"><a class="white-text" href="index.html">HomePage v1</a></li>
 								<li class="bg-theme"><a class="white-text" href="home_2.html">HomePage v2</a></li>
@@ -163,7 +192,6 @@
 								<li class="bg-theme"><a class="white-text" href="home_7.html">Home Boxed</a></li>
 							</ul> -->
 						</li>
-																													
 					</ul>
 				</nav>
 				<a href="#menu" class="btn-menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></a>
@@ -185,30 +213,23 @@
 					<div class="col-md-3">
 						<div class="widget widget-footer ">
 							<div class="logo logo-footer">
-								<a href="index.html"><img src="http://placehold.it/90x24/ccc.jpg" class="img-responsive"
+								<a href="{% url 'web:index' %}"><img src="{% static 'text.png' %}" class="img-responsive"
 										alt="Image"></a>
-								<p class="slogan-1">Some headline go here</p>
+								<p class="slogan-1">RENTA DEPARTAMENTOS Y CASAS</p>
 							</div>
-							<p class="text-about">Duis viverra tempus sem eu tincidunt. Morbi ut
-								purus quis est aliquam rhoncus. Ut fermentum
-								nibh vel augue varius, sed vestibulum leo
-								facilisis. Phasellus id massa enim. Pellentesque
-								dictum consequat diam sed gravida. Nam sed
-								lorem a lacus placerat ullamcorper id sit amet
-								sapien.</p>
+							<p class="text-about">CASAS Y DEPARTAMENTOS  EN RENTA
+								PASEO DE LA SIERRA 611 B COLONIA GUAYABAL VHSA TABASCO MEXICO</p>
 							<ul class="social social-f1">
-								<li><a href="#" class=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#" class=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#" class=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a href="#" class=""><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-								<li><a href="#" class=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+								{% for item in redes_sociales %}								
+								<li><a href="{{item.rs_url}}" class=""><i class="{{item.rs_tipo}}" aria-hidden="true"></i></a></li>
+								{% endfor %}								
 							</ul>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="widget widget-footer widget-footer-blog">
 							<div class="title-warp">
-								<h3 class="title-inline">Recent Blog Posts</h3>
+								<h3 class="title-inline">Chalest recientes</h3>
 								<div class="customNavigation customNavigation-3">
 									<a class="btn-1 prev-blog2 hover-border-theme hover-text-theme"><i
 											class="fa fa-chevron-down"></i></a>
@@ -218,123 +239,31 @@
 							</div>
 
 							<div class="blog2-warp">
+								
 								<div class="slider8">
+								{% for item in chalets_lasts %}
 									<div class="blog2-item">
 										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
+											<img src="{{item.chalet_imagen.url}}" class="img-responsive"
 												alt="Image">
 										</a>
 										<div class="blog2-detail">
 											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Sed Nulla Metus Blandit...</h3>
+												<h3 class="hover-text-theme">{{item}}</h3>
 											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
+											<p>{{item.chalet_descripcion|truncatechars:40}}</p>
 										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Interdum Malesuada...</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Sed Nulla Metus Blandit...</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Morbi Ante..</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Nullam TristiqueFelis...</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Vitae Ullamcorper ...</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Sed Nulla Metus Blandit...</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">Vivamus Tempor....</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
-									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="http://placehold.it/200x200/ccc.jpg" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">In Placerat..</h3>
-											</a>
-											<p>Phasellus vel pulvinar nibh, laoreet molestie mauris...</p>
-										</div>
-									</div>
+									</div>	
+									{% endfor %}
 								</div>
+																																																																																
 							</div>
-							<a href="#" class="ot-btn btn-main-bg bg-theme btn-rounded white-text">READ BLOG</a>
+							<a href="#" class="ot-btn btn-main-bg bg-theme btn-rounded white-text">Mas</a>
 
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div class="widget widget-footer">
+						<!-- <div class="widget widget-footer">
 							<div class="title-warp">
 								<h3 class="title-inline">Usefull Links</h3>
 							</div>
@@ -345,18 +274,19 @@
 								<li><a href="#" class="">Help Desk</a></li>
 								<li><a href="#" class="">Validate License</a></li>
 							</ul>
-						</div>
+						</div> -->
 					</div>
 					<div class="col-md-3">
 						<div class="widget widget-footer">
 							<div class="title-warp">
-								<h3 class="title-inline">Contacts</h3>
+								<h3 class="title-inline">Contacto</h3>
 							</div>
 							<div class="contact-f1">
-								<p>Telephone: <a href="tel:267-652-8701">+267-652-8701</a></p>
-								<p>Fax:<a href="fax:267-652-8702"> +267-652-8702</a></p>
-								<p>E-mail: <a href="mailto:support@dotted.com">support@dotted.com</a></p>
-								<img src="http://placehold.it/270x152/ccc.jpg" class="img-responsive" alt="Image">
+								<p>Telefono: <a href="tel:267-652-8701">993 311 2875</a></p>
+								<!-- <p>Fax:<a href="fax:267-652-8702"> +267-652-8702</a></p>
+								<p>E-mail: <a href="mailto:support@dotted.com">support@dotted.com</a></p> -->
+								<!-- <img src="http://placehold.it/270x152/ccc.jpg" class="img-responsive" alt="Image"> -->
+								<iframe class="img-responsive" src="https://www.youtube.com/embed/Y27CCcZDxrA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>
@@ -390,7 +320,9 @@
 							</li>
 						</ul> -->
 						<p class="text-copyright-1">
-							© Copyright {% now 'Y' %}. <a href="https://www.facebook.com/villahermosatabascocasasydepartamentos">Privada villa del sur</a> Todos los derechos reservados.
+							© Copyright {% now 'Y' %}. <a
+								href="https://www.facebook.com/villahermosatabascocasasydepartamentos">Privada villa del
+								sur</a> Todos los derechos reservados.
 						</p>
 					</div>
 				</div>
@@ -447,6 +379,12 @@
 	<!-- Global Js
 	    ================================================== -->
 	<script src="{% static 'web/js/plugins/template.js' %}"></script>
+
+	
+	{% block script %}
+		
+	{% endblock script %}
+		
 </body>
 
 </html>

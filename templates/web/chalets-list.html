@@ -1,0 +1,159 @@
+
+{% extends 'web/base.html' %}
+{% load humanize %}
+{% block titulo %}
+    Lista Chalets
+{% endblock titulo %}
+    
+{% block contenido %}
+    <!-- Subheader -->
+    <section id="subheader" class="no-padding sub-header-border">
+        <div class="container">
+            <div class="row">
+                <div class="sub-header-warp">
+                    <h3 class="title-subheader">
+                    Catalogo Chalets</h3>
+                    <ol class="breadcrumb">
+                        <li>Situado: </li>
+                        <li>
+                            <a href="{% url 'web:index' %}">Inicio     </a>
+                        </li>
+                        
+                        <li class="active">Chalets</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- /Subheader -->
+
+      <!-- Main Content -->
+      <section id="main-content">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="header-shop">
+                      <div class="left-header-shop">
+                          <h3>Lorem IpSum Autumn 2016</h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                      <div class="order-select">
+                          <h6>Ordenar por</h6>
+                          <!-- <p>Showing 1–12 of 25 results</p> -->
+                          <form method="get">
+                           <select>
+                               <option value="order" selected="selected">Ordenamiento por default</option>
+                               <option value="popularity">Mayor precio</option>
+                               <option value="rating">Menor precio</option>
+                               <option value="date">Mas nuevo</option>
+                               <option value="price">Mas antiguo</option>
+                               
+                           </select>
+                       </form>
+                      </div>
+                      <div class="order-select">
+                          <h6>Ordenar por precio</h6>
+                          <p>De {{min_price.chalet_costo__min}}$ - {{max_price.chalet_costo__max}}$</p>
+                          <form method="get">                            
+                            <label for="rango_input" id="demo">Example range</label>
+                            <input type="range" class="custom-range" min="{{min_price.chalet_costo__min}}" max="{{max_price.chalet_costo__max}}"  id="rango_input">
+                       </form>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="main-shop">
+
+                    
+                    {% for item in object_list %}                        
+                    <div class="product">
+                     <div class="product-image">
+                         <a class="single-img-popup shop-img-warp" href="{{item.chalet_imagen.url}}"><img alt="Shop product image!" src="{{item.chalet_imagen.url}}">
+                         </a>
+                         <span class="product-new">NEW</span>
+                         <div class="product-overlay">
+                             <a class="" href="{% url 'web:chalet-single' item.chalet_id %}">Mas detalles</a>
+                         </div>
+                     </div>
+
+                     <div class="product-description">
+                         <div class="product-category">{{item.get_chalet_tipo_display}}</div>
+                         <div class="product-title">
+                             <h3><a href="{% url 'web:chalet-single' item.chalet_id %}">{{item.chalet_titulo}}</a></h3>
+                         </div>
+                         <div class="product-price"><ins>${{item.chalet_costo|intcomma}}</ins>
+                         </div>
+                         <!-- <div class="product-rate">
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star"></i>
+                             <i class="fa fa-star-half-o"></i>
+                         </div>
+                         <div class="product-reviews"><a href="#">6 customer reviews</a>
+                         </div> -->
+                     </div>
+                 </div>
+                    {% endfor %}
+                        
+
+
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- /Main Content -->
+
+      <!-- Footer Shop -->
+      <section class="bg-light-grey">
+          <div class="container">
+              <div class="row">
+               <div class="col-md-4">
+                   <div class="icon-box effect small clean">
+                       <div class="icon">
+                           <a href="#"><i class="fa fa-gift"></i></a>
+                       </div>
+                       <h3>Free shipping on orders $60+</h3>
+                       <p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>
+                   </div>
+               </div>
+
+               <div class="col-md-4">
+                   <div class="icon-box effect small clean">
+                       <div class="icon">
+                           <a href="#"><i class="fa fa-plane"></i></a>
+                       </div>
+                       <h3>Worldwide delivery</h3>
+                       <p>We deliver to the following countries: USA, Canada, Europe, Australia</p>
+                   </div>
+               </div>
+
+               <div class="col-md-4">
+                   <div class="icon-box effect small clean">
+                       <div class="icon">
+                           <a href="#"><i class="fa fa-history"></i></a>
+                       </div>
+                       <h3>60 days money back guranty!</h3>
+                       <p>Not happy with our product, feel free to return it, we will refund 100% your money!</p>
+                   </div>
+               </div>
+           </div>
+          </div>
+      </section>
+      <!-- /Footer Shop -->
+{% endblock contenido %}
+
+
+{% block script %}
+<script>
+    var slider = document.getElementById("rango_input");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+    </script>
+{% endblock script %}
+    
+    
