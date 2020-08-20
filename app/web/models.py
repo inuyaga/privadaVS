@@ -48,6 +48,7 @@ RED_SOCIAL=(
     ('fa fa-tumblr', 'Tumbler'),
     ('fa fa-google-plus', 'Google'),
     ('fa fa-instagram', 'Instagram'),
+    ('fa fa-linkedin', 'Linkedin'),
 )
 class RedSocial(models.Model):
     rs_tipo=models.CharField(verbose_name="Tipo de red social", max_length=1000, choices=RED_SOCIAL)
