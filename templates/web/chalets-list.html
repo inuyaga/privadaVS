@@ -65,36 +65,50 @@
                   <div class="main-shop">
 
                     
-                    {% for item in object_list %}                        
-                    <div class="product">
-                     <div class="product-image">
-                         <a class="single-img-popup shop-img-warp" href="{{item.chalet_imagen.url}}"><img alt="Shop product image!" src="{{item.chalet_imagen.url}}">
-                         </a>
-                         <span class="product-new">NEW</span>
-                         <div class="product-overlay">
-                             <a class="" href="{% url 'web:chalet-single' item.chalet_id %}">Mas detalles</a>
-                         </div>
-                     </div>
+                    
 
-                     <div class="product-description">
-                         <div class="product-category">{{item.get_chalet_tipo_display}}</div>
-                         <div class="product-title">
-                             <h3><a href="{% url 'web:chalet-single' item.chalet_id %}">{{item.chalet_titulo}}</a></h3>
+                    <div class="row">
+                    {% for item in object_list %}   
+                    <div id="list-blog" class="list-blog-warp">
+                        <div class="col-sm-6">
+                        <div class="item-blog blog-single-feature-img">
+                            <div class="blog-feature-warp">
+                                <span class="product-new">NEW</span>
+                                <a href="{% url 'web:chalet-single' item.chalet_id %}">
+                                <img src="{{item.chalet_imagen.url}}" class="img-responsive" alt="Image">
+                                </a>
+                            </div>
+                            <div class="blog-feature-content">
+                                <div class="blog-feature-content-inner">
+                                 <div class="blog-data">
+                                     <div class="date-time bg-theme">
+                                         <span class="date">{{item.chalet_creado|date:"d"}}</span>
+                                         <span class="month">{{item.chalet_creado|date:"M"}}</span>
+                                     </div>
+                                     <div class="blog-type">
+                                         <h5 style="color: white !important; text-align: center; padding-top: 15px;">{{item.chalet_creado|date:"Y"}}</h5>
+                                         <!-- <img src="http://placehold.it/20x24/ccc.jpg" class="img-responsive" alt="Image"> -->
+                                     </div>
+                                 </div>
+                                 <div class="blog-text">
+                                     <a href="{% url 'web:chalet-single' item.chalet_id %}"><h4 class="hover-text-theme">{{item.chalet_titulo}}</h4></a>
+                                     <p>{{item.chalet_descripcion}}</p>
+                                     <a href="{% url 'web:chalet-single' item.chalet_id %}" class="readmore hover-text-theme">[Saber mas]</a>
+                                 </div>
+                             </div>
+                             <div class="blog-footer-2 border-color-theme">
+                                 <ul>
+                                     <li>{{item.get_chalet_tipo_display}}</a></li>
+                                     <li>{{item.chalet_costo|intcomma}}</li>
+                                     <!-- <li><a href="#" class="hover-text-theme">Comment 12</a></li> -->
+                                 </ul>
+                             </div>
                          </div>
-                         <div class="product-price"><ins>${{item.chalet_costo|intcomma}}</ins>
-                         </div>
-                         <!-- <div class="product-rate">
-                             <i class="fa fa-star"></i>
-                             <i class="fa fa-star"></i>
-                             <i class="fa fa-star"></i>
-                             <i class="fa fa-star"></i>
-                             <i class="fa fa-star-half-o"></i>
-                         </div>
-                         <div class="product-reviews"><a href="#">6 customer reviews</a>
-                         </div> -->
-                     </div>
-                 </div>
+                        </div>
+                        </div>
+                    </div>
                     {% endfor %}
+                </div>
                         
 
 
