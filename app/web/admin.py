@@ -14,6 +14,15 @@ class ChaletForms(forms.ModelForm):
 class ChaletConfig(admin.ModelAdmin):
     form = ChaletForms
     raw_id_fields = ('chalet_galeria',)
+    list_display = (
+        'chalet_titulo',
+        'chalet_creado',
+        'chalet_ultima_actualizacion',
+        'chalet_portada',
+        'chalet_tipo',
+        'chalet_costo',
+        'chalet_amueblado',
+    )
 
 class GaleriaConfig(admin.ModelAdmin):
     search_fields = ('g_clave',)
