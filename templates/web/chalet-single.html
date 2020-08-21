@@ -59,7 +59,7 @@
                                <p>{{object.chalet_descripcion}}</p>
 
                                <ul class="social-share">
-                                   <li> Compartir :</li>
+                                   <li> Redes sociales :</li>
                                    
                                    {% for item in redes_sociales %}
                                    <li><a href="{{item.rs_url}}" class=""><i class="{{item.rs_tipo}}" aria-hidden="true"></i></a></li>                                       
@@ -96,37 +96,36 @@
                       
                    <!-- Relate Post -->
                    <div class="relate-project">
-                              <h3 class="title-inline">Related Project</h3>
-                              
-                              {% for item in chalet_related %}
-                                  <li>{{item}}</li>
-                              {% endfor %}
-                                  
+                              <h3 class="title-inline">Chalets Relacionados</h3>
+                                                                                                                                                            
                               <div class="customNavigation customNavigation-1">
                                <a class="btn-1 prev-relate-portfolio hover-border-theme hover-text-theme"><i class="fa fa-chevron-left"></i></a>
                                <a class="btn-1 next-relate-portfolio hover-border-theme hover-text-theme"><i class="fa fa-chevron-right"></i></a>
                            </div><!-- End owl button -->
                               <div class="relate-portfolio-warp">
                                <div id="owl-relate-portfolio" class="owl-carousel owl-theme owl-relate-portfolio ">
-                                    <div class="item">
+                                    
+                                {% for item in chalet_related %}
+                                <div class="item">
                                        <div class="project-item">
                                            <div class="project-item-img-container">
-                                               <img src="http://placehold.it/740x460/ccc.jpg" class="img-responsive" alt="Image">
+                                               <img src="/media/{{item.chalet_imagen}}" class="img-responsive" alt="Image">
                                                <!-- Overlay -->
                                                <div class="overlay-1 ">
                                                    <a href="#">
                                                        <i class="fa fa-link hover-border-theme "></i>
                                                    </a>
                                                    
-                                                   <a class="single-img-popup" href="http://placehold.it/740x460/ccc.jpg"><i class="fa fa-expand hover-border-theme "></i></a>
+                                                   <a class="single-img-popup" href="/media/{{item.chalet_imagen}}"><i class="fa fa-expand hover-border-theme "></i></a>
                                                    </div>
                                                    <!-- /overlay -->
                                            </div>
-                                           <a href="#" ><h4 class="hover-text-theme">Single Image Post</h4></a>
+                                           <a href="#" ><h4 class="hover-text-theme">{{item.chalet_titulo}}</h4></a>
 
-                                           <p><a href="#" class="soft-grey-text hover-text-theme">web</a><a href="#" class="soft-grey-text hover-text-theme">, development</a></p>
+                                           <p>{{item.chalet_descripcion}}</p>
                                        </div>
                                    </div>
+                                   {% endfor %}
 
                                   </div>
                               </div>
@@ -137,14 +136,14 @@
                   <!-- /Main Page -->
                   <div class="sidebar-page">
                       <div id="sidebar" class="main-sidebar">
-                          <div class="widget widget-search">
+                          <!-- <div class="widget widget-search">
                               <form class="form-inline">
                                  <div class="form-group">
                                    <input class="form-control" id="widgetsearch" placeholder="Type & Search..." type="email">
                                  </div>
                                  <button type="button" class="reset-btn hover-text-theme"><i class="fa fa-search"></i></button>
                            </form>
-                          </div>
+                          </div> -->
                           <div class="widget widget-category">
                               <h3>Category</h3>
                               <uL class="category">

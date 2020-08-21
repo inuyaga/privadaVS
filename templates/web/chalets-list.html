@@ -34,20 +34,28 @@
                   <div class="col-md-12">
                       <div class="header-shop">
                       <div class="left-header-shop">
-                          <h3>Lorem IpSum Autumn 2016</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <h3>Catalogo Chalets</h3>
+                          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p> -->
                       </div>
                       <div class="order-select">
                           <h6>Ordenar por</h6>
                           <!-- <p>Showing 1–12 of 25 results</p> -->
                           <form method="get">
-                           <select>
-                               <option value="order" selected="selected">Ordenamiento por default</option>
-                               <option value="popularity">Mayor precio</option>
-                               <option value="rating">Menor precio</option>
-                               <option value="date">Mas nuevo</option>
-                               <option value="price">Mas antiguo</option>
+                            {%for key, values in request.GET.lists%}
+                            {%for value in values%}
+                            {% if key == 'order_by_mixed' %}
+                            {% else %}
+                            <input type="hidden" name="{{key}}" id="" value="{{value}}">
+                            {% endif %}
+                            {%endfor%}
+                            {%endfor%}
+                           <select name="order_by_mixed">
+                               <option value="default">Ordenamiento por default</option>
+                               <option value="max-min" {% if view.request.GET.order_by_mixed == 'max-min' %}selected{% endif %}>Mayor precio</option>
+                               <option value="min-max" {% if view.request.GET.order_by_mixed == 'min-max' %}selected{% endif %}>Menor precio</option>
+                               <option value="newDate" {% if view.request.GET.order_by_mixed == 'newDate' %}selected{% endif %}>Mas nuevo</option>
+                               <option value="oldDate" {% if view.request.GET.order_by_mixed == 'oldDate' %}selected{% endif %}>Mas antiguo</option>
                                
                            </select>
                        </form>
@@ -57,7 +65,15 @@
                           <p>De {{min_price.chalet_costo__min}}$ - {{max_price.chalet_costo__max}}$</p>
                           <form method="get">                            
                             <label for="rango_input" id="demo">Example range</label>
-                            <input type="range" class="custom-range" min="{{min_price.chalet_costo__min}}" max="{{max_price.chalet_costo__max}}"  id="rango_input">
+                            <input name="order_by_range_price" value="{{view.request.GET.order_by_range_price}}" type="range" class="custom-range" min="{{min_price.chalet_costo__min}}" max="{{max_price.chalet_costo__max}}"  id="rango_input">
+                            {%for key, values in request.GET.lists%}
+                            {%for value in values%}
+                            {% if key == 'order_by_range_price' %}
+                            {% else %}
+                            <input type="hidden" name="{{key}}" id="" value="{{value}}">
+                            {% endif %}
+                            {%endfor%}
+                            {%endfor%}
                        </form>
                       </div>
                       </div>
@@ -167,7 +183,12 @@
     slider.oninput = function() {
       output.innerHTML = this.value;
     }
+
+
+    $('form').on('change', function () {
+        this.submit()
+    });
+
     </script>
 {% endblock script %}
-    
     

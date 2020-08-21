@@ -28,7 +28,7 @@ class Chalet(models.Model):
     chalet_ultima_actualizacion=models.DateTimeField('Ultima Actualizacion', auto_now=True)
     chalet_portada=models.BooleanField("Portada",default=False, help_text="Utilizar como portada en pagina principal")
     chalet_tipo=models.IntegerField(verbose_name="Tipo de chalet", choices=TIPO, default=1, help_text="Elija la opcion correspondiente")
-    chalet_galeria=models.ManyToManyField(Galeria,verbose_name="Galeria", help_text="Imagenes adicionales")
+    chalet_galeria=models.ManyToManyField(Galeria,verbose_name="Galeria", help_text="Imagenes adicionales", blank=True)
     chalet_costo=models.FloatField(verbose_name="Precio/Costo")
     chalet_no_recamara=models.IntegerField(verbose_name="Recamaras", help_text="Escriba la cantidad de este elemento")
     chalet_no_cocina=models.IntegerField(verbose_name="Cocina", help_text="Escriba la cantidad de este elemento")
