@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html lang="es-mx">
 
-<head>	
+<head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>{% block titulo %}Privada Villa del Sur{% endblock titulo %}</title>
-	<meta name="description" content="CASAS Y DEPARTAMENTOS EN RENTA PASEO DE LA SIERRA 611 B COLONIA GUAYABAL VHSA TABASCO MEXICO">
+	<meta name="description"
+		content="CASAS Y DEPARTAMENTOS EN RENTA PASEO DE LA SIERRA 611 B COLONIA GUAYABAL VHSA TABASCO MEXICO">
 	<meta name="robots" content="index, follow">
 	<meta name="author" content="CMS">
 
-	
+
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{% static 'web/css/bootstrap.css' %}">
@@ -67,17 +68,17 @@
 				<li>
 					<a href="{% url 'web:index' %}"><span>Nosotros</span></a>
 				</li>
-				
-				{% if user.is_authenticated %}	
-					<li>
-						<a href="{% url 'admin:index' %}"><span>Panel</span></a>
-					</li>
-					{% else %}
-					<li>
-						<a href="{% url 'admin:index' %}"><span>Login</span></a>
-					</li>
+
+				{% if user.is_authenticated %}
+				<li>
+					<a href="{% url 'admin:index' %}"><span>Panel</span></a>
+				</li>
+				{% else %}
+				<li>
+					<a href="{% url 'admin:index' %}"><span>Login</span></a>
+				</li>
 				{% endif %}
-					
+
 				<!-- <li>
 					<a href="#">Features</a>
 					<ul>
@@ -162,27 +163,31 @@
 		<header id="stick" class="header-v1">
 			<div class="header-v1-inner">
 				<div class="logo-1">
-					<a href="{% url 'web:index' %}"><img src="{% static 'text.png' %}" style="width: 90px; height: 24px;"
-							class="img-responsive" alt="Image"></a>
+					<a href="{% url 'web:index' %}"><img src="{% static 'text.png' %}"
+							style="width: 90px; height: 24px;" class="img-responsive" alt="Image"></a>
 					<p class="slogan-1">Renta departamentos y casas</p>
 				</div>
 				<ul class="navi-right">
-					
+
 
 					<!-- <li><a href="#" class="color-theme border-color-theme bg-hover-theme"><i class="fa fa-shopping-cart"
 								aria-hidden="true"></i></a></li> -->
 				</ul>
 				<nav id="main-navi" class="nav-r">
 					<ul class="navi-level-1">
-						<li class="has-sub"><a href="{% url 'web:index' %}" class="dark-text hover-text-theme"><span>Inicio</span></a>
-						<li class="has-sub"><a href="{% url 'web:chalet-list' %}" class="dark-text hover-text-theme"><span>Chalets</span></a>
+						<li class="has-sub"><a href="{% url 'web:index' %}"
+								class="dark-text hover-text-theme"><span>Inicio</span></a>
+						<li class="has-sub"><a href="{% url 'web:chalet-list' %}"
+								class="dark-text hover-text-theme"><span>Chalets</span></a>
 						<li class="has-sub"><a href="#" class="dark-text hover-text-theme"><span>Vision</span></a>
-						<li class="has-sub"><a href="#" class="dark-text hover-text-theme"><span>Nosotros</span></a>						
-						{% if user.is_authenticated %}							
-							<li class="has-sub"><a href="{% url 'admin:index' %}" class="dark-text hover-text-theme"><span>Panel</span></a>
-						{% else %}
-							<li class="has-sub"><a href="{% url 'admin:index' %}" class="dark-text hover-text-theme"><span>Login</span></a>
-						{% endif %}							
+						<li class="has-sub"><a href="#" class="dark-text hover-text-theme"><span>Nosotros</span></a>
+							{% if user.is_authenticated %}
+						<li class="has-sub"><a href="{% url 'admin:index' %}"
+								class="dark-text hover-text-theme"><span>Panel</span></a>
+							{% else %}
+						<li class="has-sub"><a href="{% url 'admin:index' %}"
+								class="dark-text hover-text-theme"><span>Login</span></a>
+							{% endif %}
 							<!-- <ul class="navi-level-2 ">
 								<li class="bg-theme"><a class="white-text" href="index.html">HomePage v1</a></li>
 								<li class="bg-theme"><a class="white-text" href="home_2.html">HomePage v2</a></li>
@@ -213,16 +218,17 @@
 					<div class="col-md-3">
 						<div class="widget widget-footer ">
 							<div class="logo logo-footer">
-								<a href="{% url 'web:index' %}"><img src="{% static 'text.png' %}" class="img-responsive"
-										alt="Image"></a>
+								<a href="{% url 'web:index' %}"><img src="{% static 'text.png' %}"
+										class="img-responsive" alt="Image"></a>
 								<p class="slogan-1">RENTA DEPARTAMENTOS Y CASAS</p>
 							</div>
-							<p class="text-about">CASAS Y DEPARTAMENTOS  EN RENTA
+							<p class="text-about">CASAS Y DEPARTAMENTOS EN RENTA
 								PASEO DE LA SIERRA 611 B COLONIA GUAYABAL VHSA TABASCO MEXICO</p>
 							<ul class="social social-f1">
-								{% for item in redes_sociales %}								
-								<li><a href="{{item.rs_url}}" class=""><i class="{{item.rs_tipo}}" aria-hidden="true"></i></a></li>
-								{% endfor %}								
+								{% for item in redes_sociales %}
+								<li><a href="{{item.rs_url}}" class=""><i class="{{item.rs_tipo}}"
+											aria-hidden="true"></i></a></li>
+								{% endfor %}
 							</ul>
 						</div>
 					</div>
@@ -236,38 +242,40 @@
 							<div class="title-warp">
 								<h3 class="title-inline">Chalest recientes</h3>
 								<div class="customNavigation customNavigation-3">
-								 <a class="btn-1 prev-blog2 hover-border-theme hover-text-theme"><i class="fa fa-chevron-down"></i></a>
-								 <a class="btn-1 next-blog2 hover-border-theme hover-text-theme"><i class="fa fa-chevron-up"></i></a>
-							 </div><!-- End owl button -->
+									<a class="btn-1 prev-blog2 hover-border-theme hover-text-theme"><i
+											class="fa fa-chevron-down"></i></a>
+									<a class="btn-1 next-blog2 hover-border-theme hover-text-theme"><i
+											class="fa fa-chevron-up"></i></a>
+								</div><!-- End owl button -->
 							</div>
 
-						 <div class="blog2-warp">
+							<div class="blog2-warp">
 								<div class="slider8">
 									{% for item in chalets_lasts %}
 									<div class="blog2-item">
-									 <a href="#" class="blog2-img">
-										 <img src="{{item.chalet_imagen.url}}" class="img-responsive" alt="Image">
-									 </a>
-									 <div class="blog2-detail">
-										 <a href="blog-single.html"><h3 class="hover-text-theme">{{item}}</h3></a>
-										 <p>{{item.chalet_descripcion|truncatechars:40}}</p>
-									 </div>
-								 </div>
-								 {% endfor %}
-								 
-								 
-	
-								
+										<a href="#" class="blog2-img">
+											<img src="{{item.chalet_imagen.url}}" class="img-responsive" alt="Image">
+										</a>
+										<div class="blog2-detail">
+											<a href="#">
+												<h3 class="hover-text-theme">{{item}}</h3>
+											</a>
+											<p>{{item.chalet_descripcion|truncatechars:30}}</p>
+										</div>
+									</div>
+									{% endfor %}
+
 								</div>
-						 </div>
-						 <a href="{% url 'web:chalet-list' %}" class="ot-btn btn-main-bg bg-theme btn-rounded white-text">Mas</a>
+							</div>
+							<a href="{% url 'web:chalet-list' %}"
+								class="ot-btn btn-main-bg bg-theme btn-rounded white-text">Mas</a>
 
 						</div>
 					</div>
 
 
 
-				
+
 					<div class="col-md-3">
 						<!-- <div class="widget widget-footer">
 							<div class="title-warp">
@@ -292,7 +300,10 @@
 								<!-- <p>Fax:<a href="fax:267-652-8702"> +267-652-8702</a></p>
 								<p>E-mail: <a href="mailto:support@dotted.com">support@dotted.com</a></p> -->
 								<!-- <img src="http://placehold.it/270x152/ccc.jpg" class="img-responsive" alt="Image"> -->
-								<iframe class="img-responsive" src="https://www.youtube.com/embed/Y27CCcZDxrA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<iframe class="img-responsive" src="https://www.youtube.com/embed/Y27CCcZDxrA"
+									frameborder="0"
+									allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>
@@ -386,11 +397,11 @@
 	    ================================================== -->
 	<script src="{% static 'web/js/plugins/template.js' %}"></script>
 
-	
+
 	{% block script %}
-		
+
 	{% endblock script %}
-		
+
 </body>
 
 </html>
