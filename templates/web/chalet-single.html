@@ -86,7 +86,15 @@
                                <!-- <p><i class="fa fa-check-circle color-theme" aria-hidden="true"></i>HTML</p> -->
                                <p><span>Baño:</span>{{object.chalet_no_bano}}</p>
                                <p><span>Estacionamiento:</span>{{object.chalet_no_estacionamiento}}</p>
-                               <p><span>Amueblado:</span>{{object.chalet_amueblado}}</p>
+                               <p><span>Amueblado:</span>
+                                
+                                {% if object.chalet_amueblado is True %}
+                                <i class="fa fa-check-circle color-theme" aria-hidden="true"></i>
+                                {% else %}
+                                No
+                                {% endif %}
+                                    
+                                </p>
                            </div>
 
                        </div>
