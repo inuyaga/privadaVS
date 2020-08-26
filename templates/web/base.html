@@ -226,42 +226,48 @@
 							</ul>
 						</div>
 					</div>
+
+
+
+
+
 					<div class="col-md-3">
 						<div class="widget widget-footer widget-footer-blog">
 							<div class="title-warp">
 								<h3 class="title-inline">Chalest recientes</h3>
 								<div class="customNavigation customNavigation-3">
-									<a class="btn-1 prev-blog2 hover-border-theme hover-text-theme"><i
-											class="fa fa-chevron-down"></i></a>
-									<a class="btn-1 next-blog2 hover-border-theme hover-text-theme"><i
-											class="fa fa-chevron-up"></i></a>
-								</div><!-- End owl button -->
+								 <a class="btn-1 prev-blog2 hover-border-theme hover-text-theme"><i class="fa fa-chevron-down"></i></a>
+								 <a class="btn-1 next-blog2 hover-border-theme hover-text-theme"><i class="fa fa-chevron-up"></i></a>
+							 </div><!-- End owl button -->
 							</div>
 
-							<div class="blog2-warp">
-								
+						 <div class="blog2-warp">
 								<div class="slider8">
-								{% for item in chalets_lasts %}
+									{% for item in chalets_lasts %}
 									<div class="blog2-item">
-										<a href="blog-single.html" class="blog2-img">
-											<img src="{{item.chalet_imagen.url}}" class="img-responsive"
-												alt="Image">
-										</a>
-										<div class="blog2-detail">
-											<a href="blog-single.html">
-												<h3 class="hover-text-theme">{{item}}</h3>
-											</a>
-											<p>{{item.chalet_descripcion|truncatechars:40}}</p>
-										</div>
-									</div>	
-									{% endfor %}
+									 <a href="#" class="blog2-img">
+										 <img src="{{item.chalet_imagen.url}}" class="img-responsive" alt="Image">
+									 </a>
+									 <div class="blog2-detail">
+										 <a href="blog-single.html"><h3 class="hover-text-theme">{{item}}</h3></a>
+										 <p>{{item.chalet_descripcion|truncatechars:40}}</p>
+									 </div>
+								 </div>
+								 {% endfor %}
+								 
+								 
+	
+								
 								</div>
-																																																																																
-							</div>
-							<a href="#" class="ot-btn btn-main-bg bg-theme btn-rounded white-text">Mas</a>
+						 </div>
+						 <a href="{% url 'web:chalet-list' %}" class="ot-btn btn-main-bg bg-theme btn-rounded white-text">Mas</a>
 
 						</div>
 					</div>
+
+
+
+				
 					<div class="col-md-3">
 						<!-- <div class="widget widget-footer">
 							<div class="title-warp">
